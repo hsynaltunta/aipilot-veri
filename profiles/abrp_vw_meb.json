@@ -1,0 +1,51 @@
+{
+  "id": "abrp_vw_meb",
+  "name": "Volkswagen MEB: ID.3 / ID.4 / Q4 e-tron (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 16.5,
+  "source": "iternio/ev-obd-pids volkswagen/MEB.json (Apache 2.0, spot2000)",
+  "detect": {
+    "wmi": [
+      "WVW",
+      "WVG",
+      "WA1",
+      "WAU",
+      "TMB",
+      "VSS"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "22028C",
+      "header": "17FC007B",
+      "responseHeader": "17FE007B",
+      "extendedSession": false,
+      "formula": "1.12*B3/2.5-7.16",
+      "decimals": 1,
+      "min": -8,
+      "max": 105,
+      "warnBelow": 10
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "221E3B",
+      "header": "17FC007B",
+      "responseHeader": "17FE007B",
+      "extendedSession": false,
+      "formula": "W3/4",
+      "decimals": 1,
+      "min": 300,
+      "max": 500
+    }
+  ]
+}
