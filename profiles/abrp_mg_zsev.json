@@ -1,0 +1,125 @@
+{
+  "id": "abrp_mg_zsev",
+  "name": "MG ZS EV (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 17.3,
+  "source": "iternio/ev-obd-pids mg/mgzsev.json (Apache 2.0, Peter Nixon)",
+  "detect": {
+    "wmi": [
+      "LSJ",
+      "SDP"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "22B046",
+      "header": "781",
+      "responseHeader": "789",
+      "extendedSession": false,
+      "formula": "W3/100",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "22B061",
+      "header": "781",
+      "responseHeader": "789",
+      "extendedSession": false,
+      "formula": "W3/100",
+      "decimals": 1,
+      "min": 0,
+      "max": 100
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "22B042",
+      "header": "781",
+      "responseHeader": "789",
+      "extendedSession": false,
+      "formula": "W3*0.25",
+      "decimals": 1,
+      "min": 300,
+      "max": 450
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "22B043",
+      "header": "781",
+      "responseHeader": "789",
+      "extendedSession": false,
+      "formula": "(W3-40000)*0.25/10",
+      "decimals": 1,
+      "min": -300,
+      "max": 1000
+    },
+    {
+      "id": "batt_temp",
+      "title": "Batarya Sıcaklığı",
+      "unit": "°C",
+      "command": "22B056",
+      "header": "781",
+      "responseHeader": "789",
+      "extendedSession": false,
+      "formula": "B3/2-40",
+      "decimals": 1,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "speed",
+      "title": "Araç Hızı",
+      "unit": "km/h",
+      "command": "22BA00",
+      "header": "7E3",
+      "responseHeader": "7EB",
+      "extendedSession": false,
+      "formula": "(W3-20000)/100",
+      "decimals": 0,
+      "min": 0,
+      "max": 220
+    },
+    {
+      "id": "ambient",
+      "title": "Dış Sıcaklık",
+      "unit": "°C",
+      "command": "22BB05",
+      "header": "7E3",
+      "responseHeader": "7EB",
+      "extendedSession": false,
+      "formula": "B3-40",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "odometer",
+      "title": "Kilometre",
+      "unit": "km",
+      "command": "22B101",
+      "header": "760",
+      "responseHeader": "768",
+      "extendedSession": false,
+      "formula": "B3*65536+B4*256+B5",
+      "decimals": 0,
+      "min": 0,
+      "max": 1000000
+    }
+  ]
+}
