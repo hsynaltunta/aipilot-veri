@@ -1,0 +1,137 @@
+{
+  "id": "abrp_deepal_s05",
+  "name": "Deepal S05 (ABRP, deneme)",
+  "vehicleType": "ELECTRIC",
+  "source": "Iternio-Planning-AB/ev-obd-pids deepal/s05 (Apache 2.0); topluluk adayı, Car Scanner değerlerinden. SOH aday; kalan enerji, toplam şarj enerjisi ve kilometre doğrulanmadığı için alınmadı. Araçta denenmedi. Şasi öneki (LS5, LS4) doğrulanmadı.",
+  "detect": {
+    "wmi": [
+      "LS5",
+      "LS4"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "22F22F",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "B3",
+      "decimals": 0,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "22F228",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "W3/10",
+      "decimals": 1,
+      "min": 250,
+      "max": 500
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "22F229",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "(W3-6015)/10",
+      "decimals": 1,
+      "min": -600,
+      "max": 600
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı (aday)",
+      "unit": "%",
+      "command": "22F27D",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "((B3*65536)+W4)/10000",
+      "decimals": 1,
+      "min": 50,
+      "max": 105
+    },
+    {
+      "id": "cell_max",
+      "title": "En Yüksek Hücre",
+      "unit": "V",
+      "command": "22F250",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "W3/1000",
+      "decimals": 3,
+      "min": 2,
+      "max": 4.5
+    },
+    {
+      "id": "cell_min",
+      "title": "En Düşük Hücre",
+      "unit": "V",
+      "command": "22F251",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "W3/1000",
+      "decimals": 3,
+      "min": 2,
+      "max": 4.5
+    },
+    {
+      "id": "batt_temp_max",
+      "title": "Batarya En Yüksek Sıcaklık",
+      "unit": "°C",
+      "command": "22F252",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "B3-40",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "batt_temp_min",
+      "title": "Batarya En Düşük Sıcaklık",
+      "unit": "°C",
+      "command": "22F253",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "B3-40",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "charge_port_temp",
+      "title": "Şarj Soketi Sıcaklığı",
+      "unit": "°C",
+      "command": "22F255",
+      "header": "7A1",
+      "responseHeader": "7A9",
+      "extendedSession": false,
+      "formula": "(B3-32)/1.8",
+      "decimals": 0,
+      "min": -40,
+      "max": 120
+    }
+  ]
+}
