@@ -1,0 +1,125 @@
+{
+  "id": "abrp_honda_eny1",
+  "name": "Honda e:Ny1 (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 18.2,
+  "source": "Iternio-Planning-AB/ev-obd-pids honda/eny1.json (Apache 2.0); 29 bit adres 18DA01F1 (batarya) ve 18DA60F1 (gösterge); kilometre ve hız mil olarak geliyor (x1,60934). Araçta denenmedi. Şasi öneki (LVH, JHM) doğrulanmadı.",
+  "detect": {
+    "wmi": [
+      "LVH",
+      "JHM"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "22202A",
+      "header": "18DA01F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "B53",
+      "decimals": 0,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "22202A",
+      "header": "18DA01F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "B245*100/255",
+      "decimals": 1,
+      "min": 50,
+      "max": 105
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "22202A",
+      "header": "18DA01F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "W58/20",
+      "decimals": 1,
+      "min": 250,
+      "max": 450
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "22202A",
+      "header": "18DA01F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "SW60/100",
+      "decimals": 1,
+      "min": -500,
+      "max": 500
+    },
+    {
+      "id": "battery_energy_kwh",
+      "title": "Kalan Enerji",
+      "unit": "kWh",
+      "command": "22202A",
+      "header": "18DA01F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "B53*0.62",
+      "decimals": 1,
+      "min": 0,
+      "max": 62
+    },
+    {
+      "id": "speed",
+      "title": "Araç Hızı",
+      "unit": "km/h",
+      "command": "227022",
+      "header": "18DA60F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "B13*1.60934",
+      "decimals": 0,
+      "min": 0,
+      "max": 170
+    },
+    {
+      "id": "odometer",
+      "title": "Toplam Kilometre",
+      "unit": "km",
+      "command": "227022",
+      "header": "18DA60F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "((B9*65536)+W10)*1.60934",
+      "decimals": 0,
+      "min": 0,
+      "max": 2000000
+    },
+    {
+      "id": "ambient",
+      "title": "Dış Sıcaklık",
+      "unit": "°C",
+      "command": "227028",
+      "header": "18DA60F1",
+      "responseHeader": "18DAF1F1",
+      "extendedSession": false,
+      "formula": "B20",
+      "decimals": 0,
+      "min": -40,
+      "max": 60
+    }
+  ]
+}
