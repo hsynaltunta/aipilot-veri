@@ -1,0 +1,37 @@
+{
+  "id": "wican_bmw_i3",
+  "name": "BMW i3 (WiCAN)",
+  "vehicleType": "ELECTRIC",
+  "source": "meatpiHQ/wican-fw bmw/i3.json (GPL-3.0); genişletilmiş adres 07",
+  "detect": {
+    "wmi": [
+      "WBY"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "22DDBC",
+      "header": "6F1",
+      "responseHeader": "607",
+      "extendedSession": false,
+      "formula": "W6/10",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10,
+      "init": [
+        "ATCEA07",
+        "ATTAF1",
+        "ATFCSD07300000"
+      ]
+    }
+  ]
+}
