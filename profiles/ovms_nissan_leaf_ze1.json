@@ -1,0 +1,73 @@
+{
+  "id": "ovms_nissan_leaf_ze1",
+  "name": "Nissan Leaf ZE1 (OVMS)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 17.1,
+  "source": "openvehicles/Open-Vehicle-Monitoring-System-3 vehicle_nissanleaf.cpp",
+  "detect": {
+    "wmi": [
+      "SJN",
+      "JN1"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "2101",
+      "header": "79B",
+      "responseHeader": "7BB",
+      "extendedSession": false,
+      "formula": "(B33*65536+B34*256+B35)/10000",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "hx",
+      "title": "Hx (iletkenlik)",
+      "unit": "%",
+      "command": "2101",
+      "header": "79B",
+      "responseHeader": "7BB",
+      "extendedSession": false,
+      "formula": "W30/102.4",
+      "decimals": 1,
+      "min": 0,
+      "max": 130
+    },
+    {
+      "id": "ah",
+      "title": "Batarya Kapasitesi",
+      "unit": "Ah",
+      "command": "2101",
+      "header": "79B",
+      "responseHeader": "7BB",
+      "extendedSession": false,
+      "formula": "(B37*65536+B38*256+B39)/10000",
+      "decimals": 1,
+      "min": 0,
+      "max": 200
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Paket Voltajı",
+      "unit": "V",
+      "command": "2102",
+      "header": "79B",
+      "responseHeader": "7BB",
+      "extendedSession": false,
+      "formula": "W194/100",
+      "decimals": 1,
+      "min": 200,
+      "max": 420
+    }
+  ]
+}
