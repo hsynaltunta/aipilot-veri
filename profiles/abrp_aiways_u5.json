@@ -1,0 +1,110 @@
+{
+  "id": "abrp_aiways_u5",
+  "name": "Aiways U5 (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "source": "Iternio-Planning-AB/ev-obd-pids aiways/u5.json (Apache 2.0, Valentin). Araçta denenmedi. Şasi öneki (LUZ) doğrulanmadı.",
+  "detect": {
+    "wmi": [
+      "LUZ"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "221006",
+      "header": "703",
+      "responseHeader": "70B",
+      "extendedSession": false,
+      "formula": "B3",
+      "decimals": 0,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "221012",
+      "header": "703",
+      "responseHeader": "70B",
+      "extendedSession": false,
+      "formula": "B3",
+      "decimals": 0,
+      "min": 50,
+      "max": 105
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "221004",
+      "header": "703",
+      "responseHeader": "70B",
+      "extendedSession": false,
+      "formula": "SW3/10",
+      "decimals": 1,
+      "min": 250,
+      "max": 500
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "221005",
+      "header": "703",
+      "responseHeader": "70B",
+      "extendedSession": false,
+      "formula": "(SW3-7000)/10",
+      "decimals": 1,
+      "min": -500,
+      "max": 500
+    },
+    {
+      "id": "batt_temp",
+      "title": "Batarya Sıcaklığı",
+      "unit": "°C",
+      "command": "221002",
+      "header": "703",
+      "responseHeader": "70B",
+      "extendedSession": false,
+      "formula": "B3-40",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "speed",
+      "title": "Araç Hızı",
+      "unit": "km/h",
+      "command": "221202",
+      "header": "703",
+      "responseHeader": "70B",
+      "extendedSession": false,
+      "formula": "W3/100",
+      "decimals": 0,
+      "min": 0,
+      "max": 200
+    },
+    {
+      "id": "odometer",
+      "title": "Toplam Kilometre",
+      "unit": "km",
+      "command": "22DF05",
+      "header": "703",
+      "responseHeader": "70B",
+      "extendedSession": false,
+      "formula": "((B3*65536)+W4)/10",
+      "decimals": 0,
+      "min": 0,
+      "max": 1000000
+    }
+  ]
+}
