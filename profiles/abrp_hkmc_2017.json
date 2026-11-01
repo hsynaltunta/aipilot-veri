@@ -1,0 +1,85 @@
+{
+  "id": "abrp_hkmc_2017",
+  "name": "Hyundai Ioniq Electric 2017 (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 13.8,
+  "source": "iternio/ev-obd-pids hkmc/hkmc2017.json (Apache 2.0)",
+  "detect": {
+    "wmi": [
+      "KMH"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "2105",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "B33/2",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "2105",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "W27/10",
+      "decimals": 1,
+      "min": 0,
+      "max": 100
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "2101",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "W14/10",
+      "decimals": 1,
+      "min": 268.8,
+      "max": 403.2
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "2101",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "SW12/10",
+      "decimals": 1,
+      "min": -230,
+      "max": 230
+    },
+    {
+      "id": "batt_temp",
+      "title": "Batarya Sıcaklığı",
+      "unit": "°C",
+      "command": "2101",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "S16",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    }
+  ]
+}
