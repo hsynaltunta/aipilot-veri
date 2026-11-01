@@ -1,0 +1,83 @@
+{
+  "id": "abrp_renault_zoe_ph1",
+  "name": "Renault Zoe 22 / 41 kWh (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "source": "Iternio-Planning-AB/ev-obd-pids renault/zoe.json (Apache 2.0); 7E4 -> 7EC, oturum 10C0",
+  "detect": {
+    "wmi": [
+      "VF1"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "222002",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "0.02*W3",
+      "decimals": 1,
+      "min": -5,
+      "max": 105,
+      "warnBelow": 10,
+      "init": [
+        "10C0"
+      ]
+    },
+    {
+      "id": "speed",
+      "title": "Araç Hızı",
+      "unit": "km/h",
+      "command": "222003",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "0.01*W3",
+      "decimals": 0,
+      "min": 0,
+      "max": 180,
+      "init": [
+        "10C0"
+      ]
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "222004",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "0.5*W3",
+      "decimals": 1,
+      "min": 300,
+      "max": 480,
+      "init": [
+        "10C0"
+      ]
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "223042",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "0.5*W3-16383.75",
+      "decimals": 1,
+      "min": -400,
+      "max": 400,
+      "init": [
+        "10C0"
+      ]
+    }
+  ]
+}
