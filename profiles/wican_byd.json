@@ -1,0 +1,100 @@
+{
+  "id": "wican_byd",
+  "name": "BYD Atto 3 / Seal / Dolphin (WiCAN)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 15.6,
+  "source": "meatpiHQ/wican-fw byd/*.json (GPL-3.0); AB sürümü, Ekim 2024 güncellemesi öncesi",
+  "detect": {
+    "wmi": [
+      "LC0",
+      "LGX",
+      "LPE"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "221FFC",
+      "header": "7E7",
+      "responseHeader": "7EF",
+      "extendedSession": false,
+      "formula": "(B4*256+B3)/100",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "soc_display",
+      "title": "Ekrandaki Doluluk",
+      "unit": "%",
+      "command": "220005",
+      "header": "7E7",
+      "responseHeader": "7EF",
+      "extendedSession": false,
+      "formula": "B3",
+      "decimals": 0,
+      "min": 0,
+      "max": 100
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "220008",
+      "header": "7E7",
+      "responseHeader": "7EF",
+      "extendedSession": false,
+      "formula": "B4*256+B3",
+      "decimals": 0,
+      "min": 200,
+      "max": 480
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "220009",
+      "header": "7E7",
+      "responseHeader": "7EF",
+      "extendedSession": false,
+      "formula": "(B4*256+B3)*0.1-500",
+      "decimals": 1,
+      "min": -500,
+      "max": 500
+    },
+    {
+      "id": "batt_temp",
+      "title": "Batarya Sıcaklığı",
+      "unit": "°C",
+      "command": "220032",
+      "header": "7E7",
+      "responseHeader": "7EF",
+      "extendedSession": false,
+      "formula": "B3-40",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "capacity_ah",
+      "title": "Batarya Kapasitesi",
+      "unit": "Ah",
+      "command": "221FFE",
+      "header": "7E7",
+      "responseHeader": "7EF",
+      "extendedSession": false,
+      "formula": "(B6*256+B5)/100",
+      "decimals": 1,
+      "min": 0,
+      "max": 400
+    }
+  ]
+}
