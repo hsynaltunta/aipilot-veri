@@ -1,0 +1,64 @@
+{
+  "id": "dacia_lodgy",
+  "name": "Dacia Lodgy",
+  "vehicleType": "ICE",
+  "factory_per100": 4.4,
+  "source": "Standart OBD-II değerleri. Depodaki yakıt: gösterge paneli 743 -> 763, 22 200C ilk iki bayt / 100 L (11 Ekim 2026: 0B54 = 29,0 L; gösterge 8'de 5, araç menzili 10 km'lik adımlarla: 29,00 L -> 460, 28,67 L -> 450; ikisine de uyan yedek 5,65 L, ortalama 5,10). Standart PID 012F (33,7) göstergeyle uyuşmuyor, kullanılmıyor. Depo 45 L (kullanıcı bilgisi). Toplam km: gövde ünitesi (UCH) 745 -> 765, servis 21 06, ilk 4 bayt (11 Ekim 2026: 0001B364 = göstergedeki 111460 km). Yol bilgisayarı: gösterge paneli 743 -> 763, 22 2101 sıfırlamadan beri yol (0A58 = 2648 km; gösterge 2648,1), 22 2102 harcanan yakıt x20 (0A8A = 134,9 L; gösterge 134,9); ortalama tüketim ikisinden (5,09; gösterge 5,0). 22 2104 geçen süre (sn).",
+  "match": { "vins": [], "vinPrefixes": ["UU1J9"], "adapters": [] },
+  "fuel_tank_l": 45,
+  "fuel_reserve_l": 5.65,
+  "metrics": [
+    {
+      "id": "fuel_liters",
+      "title": "Depodaki Yakıt",
+      "unit": "L",
+      "command": "22200C",
+      "header": "743",
+      "responseHeader": "763",
+      "extendedSession": false,
+      "formula": "W3/100",
+      "decimals": 1,
+      "min": 0,
+      "max": 100
+    },
+    {
+      "id": "odometer",
+      "title": "Toplam Km",
+      "unit": "km",
+      "command": "2106",
+      "header": "745",
+      "responseHeader": "765",
+      "extendedSession": false,
+      "formula": "(B3*65536)+W4",
+      "decimals": 0,
+      "min": 1,
+      "max": 2000000
+    },
+    {
+      "id": "tc_distance_km",
+      "title": "Yol Bilgisayarı: Yol",
+      "unit": "km",
+      "command": "222101",
+      "header": "743",
+      "responseHeader": "763",
+      "extendedSession": false,
+      "formula": "W3",
+      "decimals": 0,
+      "min": 0,
+      "max": 65000
+    },
+    {
+      "id": "tc_fuel_l",
+      "title": "Yol Bilgisayarı: Yakıt",
+      "unit": "L",
+      "command": "222102",
+      "header": "743",
+      "responseHeader": "763",
+      "extendedSession": false,
+      "formula": "W3/20",
+      "decimals": 1,
+      "min": 0,
+      "max": 3300
+    }
+  ]
+}
