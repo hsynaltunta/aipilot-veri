@@ -1,0 +1,33 @@
+{
+  "guncellendi": "2026-11-01",
+  "aciklama": "AiPilot arac verileri: ariza kodlari, mudahale yontemleri, OBDb kutuphanesi, tarama kapsami/puanlama, arac profilleri. Uygulama bu dosyalari gunde bir kontrol edip gunceller.",
+  "dosyalar": {
+    "ariza_kodlari.json": "a758855c69",
+    "obdb_library.json": "a4d8fb80e9",
+    "tarama_durumu.json": "793576cd4a",
+    "mudahale_yontemleri.json": "8483deacca",
+    "profiles/abrp_aiways_u5.json": "0afc593e75",
+    "profiles/abrp_deepal_s05.json": "b3a1e5736d",
+    "profiles/abrp_ford_mache.json": "d2abd15773",
+    "profiles/abrp_gm_bolt.json": "6b5d9d7c74",
+    "profiles/abrp_hkmc_2017.json": "f776fae177",
+    "profiles/abrp_hkmc_2019.json": "0daf62d092",
+    "profiles/abrp_hkmc_egmp.json": "4c38a27959",
+    "profiles/abrp_honda_eny1.json": "6707f2c942",
+    "profiles/abrp_jaguar_ipace.json": "b5d2403fa7",
+    "profiles/abrp_mg_zsev.json": "9c3993bd9a",
+    "profiles/abrp_mini_cooper_se.json": "28b12b083b",
+    "profiles/abrp_renault_zoe_ph1.json": "6c623919c7",
+    "profiles/abrp_renault_zoe_ze50.json": "c4f71c26da",
+    "profiles/abrp_vw_meb.json": "c6ccd64798",
+    "profiles/dacia_lodgy.json": "524b8e6ec4",
+    "profiles/jejusoul_hkmc_hev.json": "94d1a6dfc7",
+    "profiles/obdb_opel_astra_l.json": "b70a8e6719",
+    "profiles/ovms_nissan_leaf_ze1.json": "d1f3b791da",
+    "profiles/wican_bmw_i3.json": "3e1337162b",
+    "profiles/wican_byd.json": "5e08550beb",
+    "profiles/wican_dacia_spring.json": "228b8f9dff",
+    "profiles/wican_fiat_600e.json": "1f0c706d92",
+    "profiles/wican_kgm_torres_evx.json": "28c1468294"
+  }
+}
