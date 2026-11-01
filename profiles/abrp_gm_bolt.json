@@ -1,0 +1,101 @@
+{
+  "id": "abrp_gm_bolt",
+  "name": "Chevrolet Bolt / Opel Ampera-e (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 15.0,
+  "source": "Iternio-Planning-AB/ev-obd-pids gmc/bolt17.json, bolt19.json (Apache 2.0)",
+  "detect": {
+    "wmi": [
+      "1G1",
+      "KL8",
+      "W0L",
+      "W0V"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "228334",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "B3*100/255",
+      "decimals": 1,
+      "min": -5,
+      "max": 105,
+      "warnBelow": 10
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "222414",
+      "header": "7E1",
+      "responseHeader": "7E9",
+      "extendedSession": false,
+      "formula": "SW3/20",
+      "decimals": 1,
+      "min": -500,
+      "max": 500
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "222885",
+      "header": "7E1",
+      "responseHeader": "7E9",
+      "extendedSession": false,
+      "formula": "W3/100",
+      "decimals": 1,
+      "min": 300,
+      "max": 500
+    },
+    {
+      "id": "batt_temp",
+      "title": "Batarya Sıcaklığı",
+      "unit": "°C",
+      "command": "22434F",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "B3-40",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "ambient",
+      "title": "Dış Sıcaklık",
+      "unit": "°C",
+      "command": "22801F",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "B3/2-40",
+      "decimals": 0,
+      "min": -40,
+      "max": 100
+    },
+    {
+      "id": "speed",
+      "title": "Araç Hızı",
+      "unit": "km/h",
+      "command": "22000D",
+      "header": "7E0",
+      "responseHeader": "7E8",
+      "extendedSession": false,
+      "formula": "B3",
+      "decimals": 0,
+      "min": 0,
+      "max": 200
+    }
+  ]
+}
