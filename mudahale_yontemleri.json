@@ -1,0 +1,43 @@
+{
+  "guncellendi": "2026-11-01",
+  "not": "Genel bilgilendirme amaçlıdır; kesin teşhis ve onarım için yetkili servise başvurun. Kaynak: standart OBD-II + topluluk katkıları.",
+  "kodlar": {
+    "P0010": "Eksantrik mili konum (VVT) aktüatörü devresi. Kontrol: VVT selenoid valfi, kablaj/konnektör, yağ seviyesi/kalitesi.",
+    "P0011": "Eksantrik zamanlaması ileri (A). Kontrol: VVT selenoid, yağ basıncı, zincir/gergi.",
+    "P0016": "Krank-eksantrik uyumsuzluğu. Kontrol: triger zinciri/kayışı, sensör hizası, VVT.",
+    "P0101": "Hava akış (MAF) sensörü aralık/performans. Kontrol: MAF temizliği, hava filtresi, emme kaçağı.",
+    "P0102": "MAF sensörü düşük sinyal. Kontrol: sensör, kablaj, konnektör.",
+    "P0113": "Emme hava sıcaklığı (IAT) yüksek sinyal. Kontrol: IAT sensörü, kablaj.",
+    "P0128": "Motor termostatı (soğutma sıcaklığı geç). Kontrol: termostat, soğutma sıvısı, sensör.",
+    "P0131": "O2 sensörü düşük gerilim (B1S1). Kontrol: lambda sensörü, egzoz kaçağı, kablaj.",
+    "P0133": "O2 sensörü yavaş tepki (B1S1). Kontrol: lambda sensörü eskimesi.",
+    "P0171": "Karışım fazla fakir (B1). Kontrol: emme/vakum kaçağı, MAF, yakıt basıncı, enjektör.",
+    "P0172": "Karışım fazla zengin (B1). Kontrol: yakıt basıncı, enjektör sızıntısı, MAF, hava filtresi.",
+    "P0174": "Karışım fazla fakir (B2). Kontrol: emme kaçağı, MAF, yakıt basıncı.",
+    "P0300": "Rastgele/çoklu silindir ateşleme hatası. Kontrol: bujiler, ateşleme bobinleri, enjektörler, vakum kaçağı, yakıt basıncı.",
+    "P0301": "1. silindir ateşleme hatası. Kontrol: buji/bobin/enjektör (1. silindir), kompresyon.",
+    "P0302": "2. silindir ateşleme hatası. Kontrol: buji/bobin/enjektör (2. silindir).",
+    "P0303": "3. silindir ateşleme hatası. Kontrol: buji/bobin/enjektör (3. silindir).",
+    "P0304": "4. silindir ateşleme hatası. Kontrol: buji/bobin/enjektör (4. silindir).",
+    "P0340": "Eksantrik konum sensörü devresi. Kontrol: sensör, kablaj, triger.",
+    "P0401": "EGR akışı yetersiz. Kontrol: EGR valfi/temizliği, borular, vakum.",
+    "P0420": "Katalitik verim düşük (B1). Kontrol: katalizör, O2 sensörleri, egzoz kaçağı.",
+    "P0430": "Katalitik verim düşük (B2). Kontrol: katalizör, O2 sensörleri.",
+    "P0440": "Buharlaşma (EVAP) sistemi. Kontrol: yakıt kapağı, EVAP hortumları, kanister.",
+    "P0455": "EVAP büyük kaçak. Kontrol: yakıt kapağı sızdırmazlığı, hortumlar.",
+    "P0500": "Araç hız sensörü. Kontrol: VSS, kablaj, ABS sensörleri.",
+    "P0505": "Rölanti kontrol sistemi. Kontrol: gaz kelebeği temizliği, IAC valfi.",
+    "P0562": "Sistem gerilimi düşük. Kontrol: akü, alternatör, kablaj/şarj.",
+    "P0606": "ECM/PCM işlemci hatası. Kontrol: ECU güç/toprak, yazılım; servis gerekebilir.",
+    "P0700": "Şanzıman kontrol sistemi (bilgi). Kontrol: şanzıman kodlarını ayrı oku, yağ seviyesi.",
+    "U0100": "Motor ECU ile iletişim kaybı (CAN). Kontrol: CAN kablaj, konnektör, besleme/toprak, ilgili ünite.",
+    "U0101": "Şanzıman ECU iletişim kaybı. Kontrol: CAN hattı, konnektör."
+  },
+  "onek": {
+    "P0": "Standart motor/şanzıman kodu (emisyon, yakıt, ateşleme, sensör). Yaygın nedenler: sensör arızası, kablaj/konnektör, vakum/emme kaçağı.",
+    "P1": "Üreticiye özel motor/şanzıman kodu. Anlamı markaya göre değişir; yetkili servis verisi gerekir.",
+    "C0": "Şasi/ABS/fren/direksiyon kodu. Kontrol: tekerlek hız sensörleri, kablaj, ABS ünitesi.",
+    "B0": "Gövde (airbag, klima, aydınlatma) kodu. Kontrol: ilgili sensör/aktüatör, kablaj.",
+    "U0": "Ağ/iletişim (CAN) kodu. Kontrol: CAN kablaj, konnektör, ünite beslemesi/topraklama."
+  }
+}
