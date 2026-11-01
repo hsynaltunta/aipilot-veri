@@ -1,0 +1,89 @@
+{
+  "id": "jejusoul_hkmc_hev",
+  "name": "Kia Niro / Hyundai Ioniq Hybrid (JejuSoul)",
+  "vehicleType": "HYBRID",
+  "factory_per100": 4.6,
+  "source": "JejuSoul/OBD-PIDs-for-HKMC-EVs Kia Niro HEV / Ioniq HEV",
+  "detect": {
+    "wmi": [
+      "KMH",
+      "KNA",
+      "KNE",
+      "TMA",
+      "U5Y"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "hv_soc",
+      "title": "Hibrit Batarya Doluluğu",
+      "unit": "%",
+      "command": "2101",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "B6/2",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 15
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Hibrit Batarya Voltajı",
+      "unit": "V",
+      "command": "2101",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "W14/10",
+      "decimals": 1,
+      "min": 204,
+      "max": 275.2
+    },
+    {
+      "id": "hv_current",
+      "title": "Hibrit Batarya Akımı",
+      "unit": "A",
+      "command": "2101",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "SW12/10",
+      "decimals": 1,
+      "min": -250,
+      "max": 250
+    },
+    {
+      "id": "batt_temp",
+      "title": "Hibrit Batarya Sıcaklığı",
+      "unit": "°C",
+      "command": "2101",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "S16",
+      "decimals": 0,
+      "min": -40,
+      "max": 80
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Bozulması (maks)",
+      "unit": "%",
+      "command": "2105",
+      "header": "7E4",
+      "responseHeader": "7EC",
+      "extendedSession": false,
+      "formula": "W27/10",
+      "decimals": 1,
+      "min": 0,
+      "max": 100
+    }
+  ]
+}
