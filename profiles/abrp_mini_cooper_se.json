@@ -1,0 +1,110 @@
+{
+  "id": "abrp_mini_cooper_se",
+  "name": "Mini Cooper SE (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 14.7,
+  "source": "Iternio-Planning-AB/ev-obd-pids Mini/MiniCooperSE.json (Apache 2.0); BMW genişletilmiş adres 07 (BMW i3 profiliyle aynı bağlantı)",
+  "detect": {
+    "wmi": [
+      "WMW"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "22DDBC",
+      "header": "6F1",
+      "responseHeader": "607",
+      "extendedSession": false,
+      "formula": "SW3*0.1",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10,
+      "init": [
+        "ATCEA07",
+        "ATTAF1",
+        "ATFCSD07300000"
+      ]
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "22DD68",
+      "header": "6F1",
+      "responseHeader": "607",
+      "extendedSession": false,
+      "formula": "SW3*0.01",
+      "decimals": 1,
+      "min": 300,
+      "max": 450,
+      "init": [
+        "ATCEA07",
+        "ATTAF1",
+        "ATFCSD07300000"
+      ]
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "22DD69",
+      "header": "6F1",
+      "responseHeader": "607",
+      "extendedSession": false,
+      "formula": "0-SW5*0.01",
+      "decimals": 1,
+      "min": -300,
+      "max": 300,
+      "init": [
+        "ATCEA07",
+        "ATTAF1",
+        "ATFCSD07300000"
+      ]
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "226335",
+      "header": "6F1",
+      "responseHeader": "607",
+      "extendedSession": false,
+      "formula": "B6",
+      "decimals": 0,
+      "min": 0,
+      "max": 100,
+      "init": [
+        "ATCEA07",
+        "ATTAF1",
+        "ATFCSD07300000"
+      ]
+    },
+    {
+      "id": "batt_temp",
+      "title": "Batarya Sıcaklığı",
+      "unit": "°C",
+      "command": "22DDC0",
+      "header": "6F1",
+      "responseHeader": "607",
+      "extendedSession": false,
+      "formula": "SW7/100",
+      "decimals": 1,
+      "min": -40,
+      "max": 80,
+      "init": [
+        "ATCEA07",
+        "ATTAF1",
+        "ATFCSD07300000"
+      ]
+    }
+  ]
+}
