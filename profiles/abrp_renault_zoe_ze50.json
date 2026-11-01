@@ -1,0 +1,98 @@
+{
+  "id": "abrp_renault_zoe_ze50",
+  "name": "Renault Zoe ZE50 (ABRP)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 17.2,
+  "source": "iternio/ev-obd-pids renault/zoe2.json (Apache 2.0)",
+  "detect": {
+    "wmi": [
+      "VF1"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "229002",
+      "header": "18DADBF1",
+      "responseHeader": "18DAF1DB",
+      "extendedSession": true,
+      "formula": "W3*0.01",
+      "decimals": 1,
+      "min": -5,
+      "max": 105,
+      "warnBelow": 10
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "229003",
+      "header": "18DADBF1",
+      "responseHeader": "18DAF1DB",
+      "extendedSession": true,
+      "formula": "W3*0.01",
+      "decimals": 1,
+      "min": 0,
+      "max": 105
+    },
+    {
+      "id": "kwh_charged",
+      "title": "Şarj Edilen Enerji",
+      "unit": "kWh",
+      "command": "2291C8",
+      "header": "18DADBF1",
+      "responseHeader": "18DAF1DB",
+      "extendedSession": true,
+      "formula": "(B3*65536+B4*256+B5)*0.001",
+      "decimals": 1,
+      "min": 0,
+      "max": 60
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "2220FE",
+      "header": "18DADAF1",
+      "responseHeader": "18DAF1DA",
+      "extendedSession": true,
+      "formula": "W3*0.1",
+      "decimals": 1,
+      "min": 300,
+      "max": 480
+    },
+    {
+      "id": "hv_current",
+      "title": "Batarya Akımı",
+      "unit": "A",
+      "command": "2221CC",
+      "header": "18DADAF1",
+      "responseHeader": "18DAF1DA",
+      "extendedSession": true,
+      "formula": "-(0.25*W3-500)",
+      "decimals": 1,
+      "min": -400,
+      "max": 400
+    },
+    {
+      "id": "speed",
+      "title": "Araç Hızı",
+      "unit": "km/h",
+      "command": "222003",
+      "header": "18DADAF1",
+      "responseHeader": "18DAF1DA",
+      "extendedSession": true,
+      "formula": "W3*0.01",
+      "decimals": 0,
+      "min": 0,
+      "max": 180
+    }
+  ]
+}
