@@ -1,0 +1,58 @@
+{
+  "id": "wican_fiat_600e",
+  "name": "Fiat 600e (WiCAN)",
+  "vehicleType": "ELECTRIC",
+  "source": "meatpiHQ/wican-fw fiat/600e.json (GPL-3.0)",
+  "detect": {
+    "wmi": [
+      "ZFA"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "22D410",
+      "header": "6B4",
+      "responseHeader": "694",
+      "extendedSession": false,
+      "formula": "W3/512",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "22D860",
+      "header": "6B4",
+      "responseHeader": "694",
+      "extendedSession": false,
+      "formula": "W4/16",
+      "decimals": 1,
+      "min": 0,
+      "max": 105
+    },
+    {
+      "id": "hv_voltage",
+      "title": "Batarya Voltajı",
+      "unit": "V",
+      "command": "22D815",
+      "header": "6B4",
+      "responseHeader": "694",
+      "extendedSession": false,
+      "formula": "W3/16",
+      "decimals": 1,
+      "min": 200,
+      "max": 480
+    }
+  ]
+}
