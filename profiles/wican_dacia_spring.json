@@ -1,0 +1,46 @@
+{
+  "id": "wican_dacia_spring",
+  "name": "Dacia Spring (WiCAN)",
+  "vehicleType": "ELECTRIC",
+  "factory_per100": 13.9,
+  "source": "meatpiHQ/wican-fw dacia/spring.json (GPL-3.0)",
+  "detect": {
+    "wmi": [
+      "UU1"
+    ]
+  },
+  "match": {
+    "vins": [],
+    "vinPrefixes": [],
+    "adapters": []
+  },
+  "metrics": [
+    {
+      "id": "soc",
+      "title": "Batarya Doluluğu",
+      "unit": "%",
+      "command": "229002",
+      "header": "79B",
+      "responseHeader": "7BB",
+      "extendedSession": false,
+      "formula": "B3/2",
+      "decimals": 1,
+      "min": 0,
+      "max": 100,
+      "warnBelow": 10
+    },
+    {
+      "id": "soh",
+      "title": "Batarya Sağlığı",
+      "unit": "%",
+      "command": "229003",
+      "header": "79B",
+      "responseHeader": "7BB",
+      "extendedSession": false,
+      "formula": "B3/2",
+      "decimals": 1,
+      "min": 0,
+      "max": 105
+    }
+  ]
+}
